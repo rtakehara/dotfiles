@@ -1,0 +1,14 @@
+mode=drun
+width=600
+height=460
+prompt=Search...
+normal_window=true
+allow_images=true
+image_size=32
+allow_markup=true
+hide_scroll=true
+matching=contains
+no_actions=true
+columns=1
+dynamic_lines=true
+insensitive=true
