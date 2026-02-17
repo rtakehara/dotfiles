@@ -1,0 +1,27 @@
+#!/bin/sh
+
+pkill wofi && exit 0
+
+MENU_ITEMS="kill
+btop
+diskonaut
+.config
+info
+AI
+wlogout"
+
+choice=$(printf "%s\n" "$MENU_ITEMS" | \
+wofi --dmenu \
+     -c ~/.config/wofi/dmenu/ctrl-alt-del \
+     -s ~/.config/wofi/dmenu/ctrl-alt-del.css)
+
+
+case "$choice" in
+    kill) hyprctl kill;;
+    info) kitty --hold --class floating-app 'fastfetch';;
+    diskonaut) kitty --class floating-app 'diskonaut' /home/rodrigo;;
+    .config) dolphin --select ~/.config/hypr;;
+    btop) kitty --class floating-app 'btop';;
+    AI) kitty --hold --class floating-app 'ollama' run assistant:latest;;
+    wlogout) wlogout;;
+esac

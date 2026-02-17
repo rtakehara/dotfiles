@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+hyprctl binds -j | jq -r '
+  .. | objects
+  | select(.has_description == true)
+  | select(.key != null)
+  | . as $b
+  | ($b.modmask // 0 | tonumber) as $mask
+  # decode modmask to icons or names
+  | [
+      if (($mask / 64 | floor) % 2) == 1 then " " else empty end,
+      if (($mask / 8  | floor) % 2) == 1 then "⎇ " else empty end,
+      if (($mask / 1  | floor) % 2) == 1 then "⇧ " else empty end,
+      if (($mask / 4  | floor) % 2) == 1 then "⌃ " else empty end
+    ] | join(" + ") as $mods
+  | if $mods != "" then $mods + " + " else "" end as $mods_prefix
+  # replace key names with icons
+  | ($b.key
+      | gsub("mouse:272"; "󰍽 Left")
+      | gsub("mouse:273"; "󰍽 Right")
+      | gsub("mouse:274"; "󰍽 Middle")
+      | gsub("mouse:275"; "󰍽 4")
+      | gsub("mouse:276"; "󰍽 5")
+      | gsub("mouse_down"; "󱕒")
+      | gsub("mouse_up"; "󱕒")
+      | gsub("wheel_up"; "󱕒")
+      | gsub("wheel_down"; "󱕒")
+      | gsub("XF86AudioNext"; "⏭")
+      | gsub("XF86AudioPrev"; "⏮")
+      | gsub("XF86AudioPlay"; "⏯")
+      | gsub("XF86AudioStop"; "⏹")
+      | gsub("XF86AudioMute"; "")
+      | gsub("XF86AudioLowerVolume"; "")
+      | gsub("XF86AudioRaiseVolume"; "")
+      | gsub("^XF86"; "")
+    ) as $key_icon
+  # combine mods + key + description
+  | "\($mods_prefix)\($key_icon) → \($b.description)"
+' | wofi --dmenu \
+     -c ~/.config/wofi/dmenu/bind-cheat-sheet \
+     -s ~/.config/wofi/dmenu/bind-cheat-sheet.css
