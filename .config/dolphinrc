@@ -1,0 +1,31 @@
+MenuBar=Disabled
+
+[DetailsMode]
+PreviewSize=16
+
+[General]
+RememberOpenedTabs=false
+ShowSelectionToggle=false
+ShowStatusBar=Disabled
+Version=202
+ViewPropsTimestamp=2025,11,18,17,26,17.739
+
+[IconsMode]
+IconSize=96
+PreviewSize=80
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[Notification Messages]
+warnAboutRisksBeforeActingAsAdmin=false
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,glycin-heif,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,FreeCAD,imagethumbnail,glycin-image-rs,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mltpreview,mobithumbnail,opendocumentthumbnail,gsthumbnail,glycin-svg,svgthumbnail,ffmpegthumbs,libresprite
+
+[UiSettings]
+ColorScheme=*

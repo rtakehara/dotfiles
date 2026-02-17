@@ -1,0 +1,63 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "margin": 5,
+    // "width": 1280, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "reload_style_on_change": true,
+    "modules-left": [
+        "custom/launcher",
+        "custom/app1",
+        "custom/app2",
+        "custom/app3",
+        "hyprland/workspaces#minimized",
+        "mpris"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+    ],
+    "modules-right": [
+        "custom/updates",
+        //"group/performance",
+        "custom/recorder",
+        "hyprland/submap",
+        "wireplumber",
+        //"keyboard-state",
+        //"hyprland/language",
+        "battery",
+        "battery#bat2",
+        "tray",
+        "custom/notification",
+        "clock",
+        "custom/power"
+    ],
+    "group/performance": {
+        "orientation": "horizontal",
+        "drawer": {
+
+            "transition-duration": 500,
+            "children-class": "drawer",
+            "transition-left-to-right": false,
+            "click-to-reveal": false,
+
+        },
+        "modules": [
+
+            "cpu",
+            "idle_inhibitor",
+            "power-profiles-daemon",
+            "network",
+            "memory",
+            "temperature",
+
+        ],
+    },
+
+    "include": [
+		"~/.config/waybar/modules.jsonc",
+	],
+
+}

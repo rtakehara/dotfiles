@@ -1,0 +1,30 @@
+include ~/.cache/wal/colors-kitty.conf
+# font_family monospace
+font_size 10.0
+cursor_shape block
+cursor_blink_interval -1
+cursor_stop_blinking_after 15.0
+cursor_trail 0
+cursor_trail_decay 0.01 0.1
+cursor_trail_start_threshold 3
+cursor_trail_color none
+scrollbar never
+scrollbar_interactive yes
+scrollbar_jump_on_click yes
+scrollbar_width 0.5
+scrollbar_hover_width 1
+scrollbar_track_opacity 0
+scrollbar_track_hover_opacity 0.1
+background_opacity 0.85
+window_border_width 5px
+window_margin_width 10
+confirm_os_window_close 0
+
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="RobotoMono Nerd Font"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS

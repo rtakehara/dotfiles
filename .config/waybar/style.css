@@ -1,0 +1,461 @@
+@import url('/home/rodrigo/.cache/wal/colors-waybar.css');
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: NotoSans NF Med, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+window#waybar {
+    background-color: alpha(@background,0.0);
+    border-image: linear-gradient(to right, @color11, @color13);
+    border-image-slice: 1;
+
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+
+.modules-center {
+    border-radius: 25px;
+    border: solid 1px alpha(@foreground,0.2);
+}
+
+.modules-left,
+.modules-right,
+.modules-center {
+    margin: 3px 5px 0px 5px;
+
+
+}
+
+#workspaces.minimized button{
+    background-color: alpha(@color10,0.8);
+    border: solid 1px alpha(@foreground,0.2);
+    border-radius: 25px 25px 25px 25px;
+    margin-left: 5px;
+    padding-top: 1px;
+}
+
+
+#workspaces.minimized .taskbar-window,
+#workspaces.minimized .taskbar-window:hover,
+#workspaces.minimized button:hover,
+#workspaces.minimized:hover {
+    background-color: transparent;
+    border-radius: 25px 25px 25px 25px;
+}
+#workspaces.minimized button.urgent {
+    background-color: @color8;
+}
+
+
+#workspaces button {
+    color: rgba(255,255,255,0.3);
+    background-color: alpha(@background,0.5);
+    padding: 0px 4px;
+    margin: 0px;
+    border-radius: inherit;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@color8,0.5);
+    border-radius: 0px
+}
+#workspaces button:last-child {
+    padding-right: 8px;
+}
+#workspaces button:first-child {
+padding-left: 8px;
+}
+
+
+#workspaces button.empty {
+    color: alpha(@foreground,0.3);
+}
+
+
+#workspaces button.focused {
+}
+
+#workspaces button.urgent {
+    color: #eb4d4b;
+    background-color: @color8;
+}
+
+#workspaces button.active {
+    color: rgba(255,255,255,1);
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+}
+
+#workspaces .taskbar-window {
+    padding: 0px 5px 4px 5px;
+}
+
+#workspaces .taskbar-window {
+}
+
+#workspaces .taskbar-window.active {
+
+}
+
+#mode {
+    background-color: #64727D;
+}
+
+#custom-launcher,
+#custom-app1,
+#custom-app2,
+#custom-app3,
+#mpris,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#wireplumber,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#custom-power,
+#submap,
+#keyboard-state,
+#custom-updates,
+#custom-notification,
+#language {
+    padding: 0px 10px;
+    color: #ffffff;
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+    background-color: alpha(@background,0.5);
+    border-top: solid 1px alpha(@foreground,0.2);
+    border-bottom: solid 1px alpha(@foreground,0.2);
+
+}
+
+#mpris:hover,
+#clock:hover,
+#wireplumber:hover,
+#submap:hover,
+#custom-launcher:hover,
+#custom-notification:hover,
+#custom-updates:hover {
+    background-color: alpha(@color8,0.5);
+}
+
+
+#window,
+#workspaces {
+    margin: 0px;
+}
+
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-center > widget > #workspaces > button:first-child {
+    border-radius: 25px 0px 0px 25px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-center > widget > #workspaces > button:last-child  {
+    border-radius: 0px 25px 25px 0px;
+}
+
+#wireplumber,
+#custom-launcher {
+    border-radius: 25px 0px 0px 25px;
+    border-left: solid 1px alpha(@foreground,0.2);
+}
+
+#custom-app3,
+#custom-power {
+    border-radius: 0px 25px 25px 0px;
+    border-right: solid 1px alpha(@foreground,0.2);
+}
+
+
+#mpris {
+    padding: 2px 15px 0px 16px;
+    border-radius: 25px;
+    margin-left: 5px;
+    background: @color1;
+    border: solid 1px alpha(@foreground,0.2);
+}
+
+
+
+#mpris.paused {
+    color: rgba(255,255,255,0.5);
+
+}
+
+
+
+#clock {
+    padding: 2px 12px 0px 11px;
+    font-size: 14px;
+}
+
+
+#battery {
+}
+
+#battery.charging, #battery.plugged {
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: @color8;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+
+label:focus {
+    background-color: #ffffff;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#disk {
+}
+
+#backlight {
+}
+
+#network {
+}
+
+#network.disconnected {
+    background-color: @color8;
+}
+
+#wireplumber {
+    padding: 0px 14px 0px 10px;
+}
+
+
+
+#wireplumber.muted {
+    background-color: @color8;
+    color: #ffffff;
+}
+
+
+#temperature {
+}
+
+#temperature.critical {
+    background-color: @color8;
+}
+
+#tray {
+
+}
+
+
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @color8;
+}
+
+#idle_inhibitor {
+padding-right: 17px;
+}
+
+#idle_inhibitor.activated {
+    background-color: @color8;
+    color: #ffffff;
+}
+
+
+#language {
+    padding: 0 5px;
+    margin: 0 0px;
+    min-width: 16px;
+}
+
+
+#submap {
+    background: @color6;
+    min-width: 16px;
+    border-radius: 25px;
+    margin-right: 5px;
+    border: solid 1px alpha(@foreground,0.2);
+}
+
+
+
+
+#keyboard-state {
+    padding: 0 0px;
+    margin: 0 0px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: @color8;
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0px 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: @color8;
+}
+
+#privacy-item.audio-in {
+    background-color: @color8;
+}
+
+#privacy-item.audio-out {
+    background-color: @color8;
+}
+
+#custom-launcher {
+    padding: 2px 16px 0px 15px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+
+#custom-updates {
+    border-radius: 25px;
+    margin-right: 5px;
+    padding: 0px 15px 0px 10px;
+    background: @color2;
+    border: solid 1px alpha(@foreground,0.2);
+}
+
+#custom-updates:hover {
+    background-color: alpha(@color8,0.5);
+}
+
+
+#custom-updates.updated {
+    margin-right: 0px;
+    padding: 0px 0px 0px 0px;
+    background: transparent;
+    border: none;
+}
+
+
+
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+    padding: 2px 14px 0px 10px;
+}
+
+#custom-notification.notification {
+}
+
+
+
+#custom-recorder {
+    background-color: transparent;
+    padding: 0px 14px 0px 14px;
+    color: red;
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+    border-radius: 25px;
+    margin-right: 5px;
+
+}
+
+
+#custom-recorder.recording:hover {
+    background-color: alpha(@color8,0.5);
+}
+
+#custom-recorder.recording {
+    background-color: @foreground;
+    border: solid 1px alpha(@background,0.2);
+}
+
+#custom-recorder.iddle {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+#custom-app1,
+#custom-app2,
+#custom-app3 {
+    padding: 2px 15px 0px 15px;
+    color: #ffffff;
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+}
+
+#custom-app1:hover,
+#custom-app2:hover,
+#custom-app3:hover {
+    background-color: alpha(@color8,0.5);
+}
+
+#custom-power {
+    padding: 2px 12px 0px 15px;
+    font-size: 14px;
+}
+
+#custom-power:hover {
+    background-color: alpha(@color8,0.5);
+}
