@@ -1,0 +1,16 @@
+mode=dmenu
+width=500
+height=438
+prompt=Search...
+normal_window=false
+allow_images=true
+image_size=32
+allow_markup=true
+hide_scroll=true
+matching=contains
+no_actions=true
+columns=1
+dynamic_lines=true
+hide_search=true
+content_halign=center
+sort_order=alphabetical

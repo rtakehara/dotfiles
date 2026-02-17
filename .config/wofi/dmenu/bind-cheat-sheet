@@ -1,0 +1,17 @@
+mode=dmenu
+width=950
+height=600
+prompt=Keybindings...
+normal_window=true
+allow_images=true
+image_size=32
+allow_markup=true
+hide_scroll=false
+matching=contains
+no_actions=true
+columns=3
+dynamic_lines=true
+hide_search=false
+content_halign=left
+sort_order=alphabetical
+insensitive=true

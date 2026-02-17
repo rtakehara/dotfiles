@@ -1,0 +1,11 @@
+width=500
+height=438
+normal_window=true
+allow_images=true
+image_size=16
+allow_markup=true
+matching=contains
+insensitive=true
+columns=1
+dynamic_lines=false
+content_halign=left

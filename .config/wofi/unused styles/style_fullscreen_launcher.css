@@ -1,0 +1,53 @@
+@import url('/home/rodrigo/.cache/wal/colors-waybar.css');
+
+#window {
+    background: alpha(@background,0.21);
+    background-repeat: no-repeat;
+}
+
+#outer-box {
+ margin: 0px;
+}
+
+#input {
+background: alpha(@color2,0.5);
+border: solid 1px @color13;
+margin: 100px 500px;
+
+}
+
+#scroll {
+
+}
+
+
+#inner-box {
+margin: 100px;
+margin-top: 0px;
+}
+
+#img {
+
+margin-right: 15px;
+margin-left: 10px;
+}
+
+#text {
+font-size: 14px;
+font-weight: 600;
+}
+
+#entry {
+ margin: 20px;
+}
+
+#entry:selected {
+background: @color6;
+color: #ffffff;
+font-weight: bold;
+
+}
+
+#expander-box {
+
+}

@@ -1,0 +1,52 @@
+@import url('/home/rodrigo/.cache/wal/colors-waybar.css');
+
+#window {
+    background: alpha(@background,0.7);
+    background-image: url("/home/rodrigo/.cache/wofi_banner.jpg");
+    background-repeat: no-repeat;
+}
+
+#outer-box {
+
+margin-top: 200px;
+}
+
+#input {
+background: alpha(@color2,0.5);
+border: solid 1px @color13;
+margin: 10px;
+
+}
+
+#scroll {
+
+}
+
+#inner-box {
+margin: 5px;
+margin-top: 0px;
+}
+
+#img {
+
+margin-right: 15px;
+margin-left: 10px;
+}
+
+#text {
+
+}
+
+#entry {
+}
+
+#entry:selected {
+background: @color6;
+color: #ffffff;
+font-weight: bold;
+
+}
+
+#expander-box {
+
+}
