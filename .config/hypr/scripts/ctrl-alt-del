@@ -19,7 +19,7 @@ wofi --dmenu \
 case "$choice" in
     kill) hyprctl kill;;
     info) kitty --hold --class floating-app 'fastfetch';;
-    diskonaut) kitty --class floating-app 'diskonaut' /home/rodrigo;;
+    diskonaut) kitty --class floating-app 'diskonaut' /home;;
     .config) dolphin --select ~/.config/hypr;;
     btop) kitty --class floating-app 'btop';;
     AI) kitty --hold --class floating-app 'ollama' run assistant:latest;;
