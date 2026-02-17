@@ -1,8 +1,8 @@
-@import url('/home/rodrigo/.cache/wal/colors-waybar.css');
+@import url('/home/username/.cache/wal/colors-waybar.css');
 
 #window {
     background: alpha(@background,0.7);
-    background-image: url("/home/rodrigo/.cache/wofi_banner.jpg");
+    background-image: url("/home/username/.cache/wofi_banner.jpg");
     background-repeat: no-repeat;
 }
 
