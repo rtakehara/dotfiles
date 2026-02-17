@@ -3,7 +3,7 @@
 
 # set background
 sudo cp "$1" /usr/share/sddm/themes/silent/backgrounds/background
-magick "$1" -resize 600x -gravity center -crop 600x200+0-50 +repage /home/rodrigo/.cache/wofi_banner.jpg
+magick "$1" -resize 600x -gravity center -crop 600x200+0-50 +repage /home/username/.cache/wofi_banner.jpg
 
 # set pywal colors
 wal --cols16 --saturate 0.5 -n -i "$1"
